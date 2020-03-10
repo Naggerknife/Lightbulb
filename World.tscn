@@ -1,98 +1,95 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Imports/bulbiwalk02_64x64_20200225-Sheet.png" type="Texture" id=1]
-[ext_resource path="res://Player.gd" type="Script" id=2]
-[ext_resource path="res://WoodTIle.tres" type="TileSet" id=3]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Imports/wallskirt_pixel001_20200224.png" type="Texture" id=2]
+[ext_resource path="res://Imports/wallpaper_pixel001_20200224.png" type="Texture" id=3]
+[ext_resource path="res://Imports/wallpaper_pixel001_20200224_m.png" type="Texture" id=4]
+[ext_resource path="res://RechargePoint.tscn" type="PackedScene" id=5]
 
-[sub_resource type="AtlasTexture" id=1]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 64, 64 )
+[sub_resource type="TileSet" id=1]
+0/name = "Sprite"
+0/texture = ExtResource( 3 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 128, 128 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [  ]
+0/z_index = 0
 
-[sub_resource type="AtlasTexture" id=2]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 0, 64, 64 )
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 
-[sub_resource type="AtlasTexture" id=3]
-atlas = ExtResource( 1 )
-region = Rect2( 64, 0, 64, 64 )
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
 
-[sub_resource type="AtlasTexture" id=4]
-atlas = ExtResource( 1 )
-region = Rect2( 128, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=5]
-atlas = ExtResource( 1 )
-region = Rect2( 192, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 1 )
-region = Rect2( 256, 0, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 1 )
-region = Rect2( 0, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=8]
-atlas = ExtResource( 1 )
-region = Rect2( 64, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 1 )
-region = Rect2( 128, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 1 )
-region = Rect2( 192, 64, 64, 64 )
-
-[sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 1 )
-region = Rect2( 256, 64, 64, 64 )
-
-[sub_resource type="SpriteFrames" id=12]
-animations = [ {
-"frames": [ SubResource( 1 ) ],
-"loop": true,
-"name": "Idle",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 10.0
+[sub_resource type="TileSet" id=4]
+0/name = "wallskirt_pixel001_20200224.png 0"
+0/texture = ExtResource( 2 )
+0/normal_map = ExtResource( 4 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 0, 0, 0, 1 )
+0/region = Rect2( 0, 0, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/occluder = SubResource( 2 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
+0/z_index = 0
 
-[sub_resource type="CapsuleShape2D" id=15]
-radius = 16.0483
-height = 16.8417
-
-[sub_resource type="RectangleShape2D" id=14]
-extents = Vector2( 10, 10.4353 )
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 32, 16 )
 
 [node name="World" type="Node2D"]
 
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 465.408, 199.271 )
-script = ExtResource( 2 )
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0, 0, 0, 1 )
 
-[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
-frames = SubResource( 12 )
-animation = "Walk"
-frame = 6
+[node name="Tilemaps" type="Node2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 0, -7.19089 )
-shape = SubResource( 15 )
-one_way_collision_margin = 119.3
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Player"]
-position = Vector2( -0.115997, 21.8047 )
-shape = SubResource( 14 )
-
-[node name="TileMap" type="TileMap" parent="."]
-tile_set = ExtResource( 3 )
-cell_size = Vector2( 32, 32 )
+[node name="Background" type="TileMap" parent="Tilemaps"]
+tile_set = SubResource( 1 )
 format = 1
-tile_data = PoolIntArray( 327705, 0, 0, 393241, 0, 0, 458777, 0, 0, 524295, 0, 0, 524309, 0, 0, 524310, 0, 0, 524313, 0, 0, 589831, 0, 0, 589849, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655384, 0, 0, 655385, 0, 0, 720916, 0, 0, 720921, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0 )
+tile_data = PoolIntArray( -65538, 0, 0, -131072, 0, 0, -131070, 0, 0, -131068, 0, 0, -131066, 0, 0, -131064, 0, 0, -131062, 0, 0, -131060, 0, 0, -131058, 0, 0, 65534, 0, 0, 0, 0, 0, 2, 0, 0, 4, 0, 0, 6, 0, 0, 8, 0, 0, 10, 0, 0, 12, 0, 0, 14, 0, 0, 196606, 0, 0, 131072, 0, 0, 131074, 0, 0, 131076, 0, 0, 131078, 0, 0, 131080, 0, 0, 131082, 0, 0, 131084, 0, 0, 131086, 0, 0, 327678, 0, 0, 262144, 0, 0, 262146, 0, 0, 262148, 0, 0, 262150, 0, 0, 262152, 0, 0, 262154, 0, 0, 262156, 0, 0, 262158, 0, 0, 458750, 0, 0, 393216, 0, 0, 393218, 0, 0, 393220, 0, 0, 393222, 0, 0, 393224, 0, 0, 393226, 0, 0, 393228, 0, 0, 393230, 0, 0, 589822, 0, 0, 524288, 0, 0, 524290, 0, 0, 524292, 0, 0, 524294, 0, 0, 524296, 0, 0, 524298, 0, 0, 524300, 0, 0, 524302, 0, 0 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Platforms" type="TileMap" parent="Tilemaps"]
+tile_set = SubResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 327705, 0, 0, 393241, 0, 0, 458777, 0, 0, 524295, 0, 0, 524309, 0, 0, 524310, 0, 0, 524313, 0, 0, 589831, 0, 0, 589841, 0, 0, 589842, 0, 0, 589849, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655384, 0, 0, 655385, 0, 0, 720916, 0, 0, 720921, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 786456, 0, 0, 786457, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 712, 240 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -8, 0 )
+shape = SubResource( 5 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 328, 256 )
+
+[node name="AnimatedSprite" parent="Player" index="1"]
+frame = 0
+
+[node name="RechargePoint" parent="." instance=ExtResource( 5 )]
+position = Vector2( 576, 248 )
+
+[editable path="Player"]
+
+[editable path="RechargePoint"]
