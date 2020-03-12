@@ -1,10 +1,18 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://Imports/bulbiwalk02_64x64_20200225-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://Imports/bulbi_idlewalkpush02_20200302-Sheet.png" type="Texture" id=3]
 [ext_resource path="res://Imports/Circle.png" type="Texture" id=4]
 [ext_resource path="res://LightFade.gd" type="Script" id=5]
+[ext_resource path="res://bulbi_idlewalkpush03_20200311-Sheet_n.png" type="Texture" id=6]
+
+[sub_resource type="VisualShader" id=24]
+graph_offset = Vector2( -115.167, -25 )
+nodes/fragment/0/position = Vector2( 700, -80 )
+
+[sub_resource type="ShaderMaterial" id=25]
+shader = SubResource( 24 )
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -46,35 +54,119 @@ region = Rect2( 192, 64, 64, 64 )
 atlas = ExtResource( 1 )
 region = Rect2( 256, 64, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=15]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 256, 64, 64 )
 
-[sub_resource type="AtlasTexture" id=16]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 3 )
 region = Rect2( 64, 256, 64, 64 )
 
-[sub_resource type="SpriteFrames" id=12]
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
+region = Rect2( 128, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 3 )
+region = Rect2( 192, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 3 )
+region = Rect2( 256, 128, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 3 )
+region = Rect2( 64, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 3 )
+region = Rect2( 128, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 3 )
+region = Rect2( 192, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 3 )
+region = Rect2( 256, 192, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 6 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 6 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 6 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 6 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 6 )
+region = Rect2( 64, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 6 )
+region = Rect2( 128, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 6 )
+region = Rect2( 192, 64, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 6 )
+region = Rect2( 256, 64, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=21]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "Walk",
 "speed": 10.0
 }, {
-"frames": [ SubResource( 15 ), SubResource( 16 ) ],
+"frames": [ SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 2.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "Push",
+"speed": 3.0
+}, {
+"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"loop": true,
+"name": "WalkNormal",
+"speed": 5.0
 } ]
 
-[sub_resource type="CapsuleShape2D" id=13]
+[sub_resource type="CapsuleShape2D" id=22]
 radius = 16.0483
 height = 16.8417
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=23]
 extents = Vector2( 10, 10.4353 )
 
 [node name="Player" type="KinematicBody2D"]
+position = Vector2( 308, 272 )
+collision_mask = 524289
 script = ExtResource( 2 )
 
 [node name="Light2D" type="Light2D" parent="."]
@@ -86,30 +178,39 @@ energy = 1.2
 shadow_enabled = true
 shadow_filter_smooth = 1.0
 script = ExtResource( 5 )
+roundTimer = 30
 
 [node name="Timer" type="Timer" parent="Light2D"]
 wait_time = 60.0
 autostart = true
 
+[node name="Timer2" type="Timer" parent="Light2D"]
+
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 12 )
-animation = "Idle"
-frame = 1
+material = SubResource( 25 )
+frames = SubResource( 21 )
+animation = "Walk"
+frame = 9
 playing = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( 0, -7.19089 )
-shape = SubResource( 13 )
+shape = SubResource( 22 )
 one_way_collision_margin = 119.3
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( -0.115997, 21.8047 )
-shape = SubResource( 14 )
+shape = SubResource( 23 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.5, 0.5 )
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+enabled = true
+cast_to = Vector2( 0, 35 )
+collide_with_areas = true

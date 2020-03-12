@@ -42,6 +42,10 @@ jump={
  ]
 }
 
+[physics]
+
+2d/motion_fix_enabled=true
+
 [rendering]
 
 quality/driver/driver_name="GLES2"
