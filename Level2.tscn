@@ -1,0 +1,115 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Imports/wallpaper_pixel001_20200224_m.png" type="Texture" id=2]
+[ext_resource path="res://Objects/Ship.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Imports/wallskirt_pixel001_20200224.png" type="Texture" id=4]
+[ext_resource path="res://Imports/wallpaper_torn_20200310.png" type="Texture" id=5]
+[ext_resource path="res://Objects/RechargePoint.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GameManager.gd" type="Script" id=7]
+[ext_resource path="res://Objects/EndPoint.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=9]
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="TileSet" id=4]
+0/name = "wallskirt_pixel001_20200224.png 0"
+0/texture = ExtResource( 4 )
+0/normal_map = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/occluder = SubResource( 2 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 3 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="Level1" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+z_index = 1
+z_as_relative = false
+color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
+
+[node name="Tilemaps" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Platforms" type="TileMap" parent="Tilemaps"]
+tile_set = SubResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 131079, 0, 0, 131175, 0, 0, 131176, 0, 0, 131177, 0, 0, 131178, 0, 0, 131179, 0, 0, 131180, 0, 0, 131181, 0, 0, 131182, 0, 0, 131183, 0, 0, 131184, 0, 0, 131185, 0, 0, 131186, 0, 0, 131187, 0, 0, 131188, 0, 0, 131189, 0, 0, 131190, 0, 0, 131191, 0, 0, 131192, 0, 0, 131193, 0, 0, 196615, 0, 0, 196711, 0, 0, 196734, 0, 0, 262151, 0, 0, 262247, 0, 0, 262270, 0, 0, 327687, 0, 0, 327783, 0, 0, 327806, 0, 0, 393223, 0, 0, 393319, 0, 0, 393324, 0, 0, 393325, 0, 0, 393326, 0, 0, 393327, 0, 0, 393328, 0, 0, 393329, 0, 0, 393342, 0, 0, 458759, 0, 0, 458855, 0, 0, 458860, 0, 0, 458865, 0, 0, 458878, 0, 0, 524295, 0, 0, 524391, 0, 0, 524392, 0, 0, 524393, 0, 0, 524394, 0, 0, 524395, 0, 0, 524396, 0, 0, 524401, 0, 0, 524402, 0, 0, 524403, 0, 0, 524404, 0, 0, 524405, 0, 0, 524406, 0, 0, 524407, 0, 0, 524408, 0, 0, 524409, 0, 0, 524414, 0, 0, 589831, 0, 0, 589950, 0, 0, 655367, 0, 0, 655368, 0, 0, 655369, 0, 0, 655370, 0, 0, 655371, 0, 0, 655372, 0, 0, 655373, 0, 0, 655374, 0, 0, 655375, 0, 0, 655376, 0, 0, 655377, 0, 0, 655378, 0, 0, 655379, 0, 0, 655380, 0, 0, 655381, 0, 0, 655485, 0, 0, 655486, 0, 0, 720917, 0, 0, 721021, 0, 0, 721022, 0, 0, 786453, 0, 0, 786553, 0, 0, 786554, 0, 0, 786555, 0, 0, 786556, 0, 0, 786557, 0, 0, 786558, 0, 0, 851989, 0, 0, 852089, 0, 0, 917525, 0, 0, 917623, 0, 0, 917624, 0, 0, 917625, 0, 0, 983061, 0, 0, 983157, 0, 0, 983158, 0, 0, 983159, 0, 0, 1048597, 0, 0, 1048671, 0, 0, 1048672, 0, 0, 1048673, 0, 0, 1048674, 0, 0, 1048675, 0, 0, 1048676, 0, 0, 1048677, 0, 0, 1048693, 0, 0, 1114133, 0, 0, 1114134, 0, 0, 1114135, 0, 0, 1114136, 0, 0, 1114137, 0, 0, 1114138, 0, 0, 1114139, 0, 0, 1114140, 0, 0, 1114141, 0, 0, 1114142, 0, 0, 1114143, 0, 0, 1114144, 0, 0, 1114145, 0, 0, 1114146, 0, 0, 1114147, 0, 0, 1114148, 0, 0, 1114149, 0, 0, 1114150, 0, 0, 1114151, 0, 0, 1114152, 0, 0, 1114153, 0, 0, 1114154, 0, 0, 1114207, 0, 0, 1114213, 0, 0, 1114214, 0, 0, 1114215, 0, 0, 1114216, 0, 0, 1114228, 0, 0, 1114229, 0, 0, 1179690, 0, 0, 1179691, 0, 0, 1179692, 0, 0, 1179693, 0, 0, 1179694, 0, 0, 1179695, 0, 0, 1179696, 0, 0, 1179697, 0, 0, 1179698, 0, 0, 1179699, 0, 0, 1179700, 0, 0, 1179701, 0, 0, 1179702, 0, 0, 1179703, 0, 0, 1179704, 0, 0, 1179736, 0, 0, 1179737, 0, 0, 1179738, 0, 0, 1179739, 0, 0, 1179740, 0, 0, 1179741, 0, 0, 1179742, 0, 0, 1179743, 0, 0, 1179752, 0, 0, 1179753, 0, 0, 1179763, 0, 0, 1179764, 0, 0, 1245240, 0, 0, 1245241, 0, 0, 1245242, 0, 0, 1245243, 0, 0, 1245244, 0, 0, 1245245, 0, 0, 1245246, 0, 0, 1245247, 0, 0, 1245248, 0, 0, 1245249, 0, 0, 1245250, 0, 0, 1245251, 0, 0, 1245252, 0, 0, 1245270, 0, 0, 1245271, 0, 0, 1245272, 0, 0, 1245289, 0, 0, 1245290, 0, 0, 1245291, 0, 0, 1245296, 0, 0, 1245297, 0, 0, 1245298, 0, 0, 1245299, 0, 0, 1310788, 0, 0, 1310789, 0, 0, 1310790, 0, 0, 1310791, 0, 0, 1310792, 0, 0, 1310793, 0, 0, 1310794, 0, 0, 1310795, 0, 0, 1310796, 0, 0, 1310797, 0, 0, 1310798, 0, 0, 1310799, 0, 0, 1310800, 0, 0, 1310801, 0, 0, 1310802, 0, 0, 1310803, 0, 0, 1310804, 0, 0, 1310805, 0, 0, 1310806, 0, 0, 1310827, 0, 0, 1310828, 0, 0, 1310829, 0, 0, 1310830, 0, 0, 1310831, 0, 0, 1310832, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." instance=ExtResource( 9 )]
+position = Vector2( 304, 272 )
+collision_mask = 524291
+
+[node name="Light2D" parent="Player" index="0"]
+show_behind_parent = true
+z_index = 1
+texture_scale = 7.0
+energy = 1.0
+range_layer_min = -1
+roundTimer = 10
+
+[node name="RechargePoint" parent="." instance=ExtResource( 6 )]
+position = Vector2( 984, 512 )
+
+[node name="CollisionShape2D" parent="RechargePoint/Area2D" index="0"]
+position = Vector2( -2.95639e-05, 0 )
+
+[node name="Ship" parent="." instance=ExtResource( 3 )]
+position = Vector2( 440, 288 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = -1
+follow_viewport_enable = true
+follow_viewport_scale = 0.75
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -1
+motion_scale = Vector2( 0.01, 0.01 )
+motion_mirroring = Vector2( 1920, 1080 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 5 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CanvasModulate" type="CanvasModulate" parent="ParallaxBackground/ParallaxLayer/Sprite"]
+color = Color( 0, 0, 0, 1 )
+
+[node name="EndPoint" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3400, 176 )
+[connection signal="body_exited" from="RechargePoint/Area2D" to="RechargePoint" method="_on_Area2D_body_exited"]
+
+[editable path="Player"]
+
+[editable path="RechargePoint"]

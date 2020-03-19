@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Imports/Circle.png" type="Texture" id=1]
-[ext_resource path="res://RechargePoint.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/RechargePoint.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 40, 30 )
@@ -11,9 +11,10 @@ script = ExtResource( 2 )
 
 [node name="Light2D" type="Light2D" parent="."]
 texture = ExtResource( 1 )
-texture_scale = 2.0
+texture_scale = 5.0
 color = Color( 0.0627451, 0.752941, 0.266667, 1 )
-energy = 3.0
+energy = 2.0
+range_layer_min = -1
 shadow_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]

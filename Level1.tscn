@@ -1,0 +1,117 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Imports/wallpaper_pixel001_20200224_m.png" type="Texture" id=2]
+[ext_resource path="res://Objects/Ship.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Imports/wallskirt_pixel001_20200224.png" type="Texture" id=4]
+[ext_resource path="res://Imports/wallpaper_torn_20200310.png" type="Texture" id=5]
+[ext_resource path="res://Objects/RechargePoint.tscn" type="PackedScene" id=6]
+[ext_resource path="res://GameManager.gd" type="Script" id=7]
+[ext_resource path="res://Objects/EndPoint.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Objects/Player.tscn" type="PackedScene" id=9]
+
+[sub_resource type="OccluderPolygon2D" id=2]
+polygon = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=3]
+points = PoolVector2Array( 32, 32, 0, 32, 0, 0, 32, 0 )
+
+[sub_resource type="TileSet" id=4]
+0/name = "wallskirt_pixel001_20200224.png 0"
+0/texture = ExtResource( 4 )
+0/normal_map = ExtResource( 2 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/occluder = SubResource( 2 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 3 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 3 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+
+[node name="Level1" type="Node2D"]
+script = ExtResource( 7 )
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
+z_index = 1
+z_as_relative = false
+color = Color( 0.00392157, 0.00392157, 0.00392157, 1 )
+
+[node name="Tilemaps" type="Node2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Platforms" type="TileMap" parent="Tilemaps"]
+tile_set = SubResource( 4 )
+cell_size = Vector2( 32, 32 )
+format = 1
+tile_data = PoolIntArray( 1310778, 0, 0, 1376314, 0, 0, 1441850, 0, 0, 1507386, 0, 0, 1572895, 0, 0, 1572922, 0, 0, 1638431, 0, 0, 1638458, 0, 0, 1703967, 0, 0, 1703994, 0, 0, 1769503, 0, 0, 1769516, 0, 0, 1769517, 0, 0, 1769518, 0, 0, 1769519, 0, 0, 1769520, 0, 0, 1769521, 0, 0, 1769522, 0, 0, 1769523, 0, 0, 1769530, 0, 0, 1835039, 0, 0, 1835052, 0, 0, 1835059, 0, 0, 1835066, 0, 0, 1900575, 0, 0, 1900588, 0, 0, 1900595, 0, 0, 1900602, 0, 0, 1966111, 0, 0, 1966124, 0, 0, 1966131, 0, 0, 1966132, 0, 0, 1966133, 0, 0, 1966134, 0, 0, 1966135, 0, 0, 1966136, 0, 0, 1966137, 0, 0, 1966138, 0, 0, 2031647, 0, 0, 2031648, 0, 0, 2031649, 0, 0, 2031650, 0, 0, 2031651, 0, 0, 2031652, 0, 0, 2031653, 0, 0, 2031654, 0, 0, 2031655, 0, 0, 2031656, 0, 0, 2031657, 0, 0, 2031658, 0, 0, 2031659, 0, 0, 2031660, 0, 0 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Player" parent="." instance=ExtResource( 9 )]
+position = Vector2( 1056, 960 )
+collision_mask = 524291
+
+[node name="Light2D" parent="Player" index="0"]
+show_behind_parent = true
+z_index = 1
+texture_scale = 7.0
+energy = 1.0
+range_layer_min = -1
+roundTimer = 20
+
+[node name="RechargePoint" parent="." instance=ExtResource( 6 )]
+position = Vector2( 856, 120 )
+
+[node name="CollisionShape2D" parent="RechargePoint/Area2D" index="0"]
+position = Vector2( -8.00003, 8 )
+
+[node name="Ship" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1224, 960 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = -1
+follow_viewport_enable = true
+follow_viewport_scale = 0.75
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+z_index = -1
+motion_scale = Vector2( 0.01, 0.01 )
+motion_mirroring = Vector2( 1920, 1080 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+texture = ExtResource( 5 )
+centered = false
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CanvasModulate" type="CanvasModulate" parent="ParallaxBackground/ParallaxLayer/Sprite"]
+color = Color( 0, 0, 0, 1 )
+
+[node name="EndPoint" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1760, 920 )
+world_Scene = "res://Level2.tscn"
+[connection signal="body_exited" from="RechargePoint/Area2D" to="RechargePoint" method="_on_Area2D_body_exited"]
+
+[editable path="Player"]
+
+[editable path="RechargePoint"]

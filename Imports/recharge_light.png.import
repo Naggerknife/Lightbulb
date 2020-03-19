@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bulbi_idlewalkpush03_20200311-Sheet_n.png-93843a8bb6f80a017629f1a1fe987258.stex"
+path="res://.import/recharge_light.png-ddd549cf933399e2cb89699a752d538c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://bulbi_idlewalkpush03_20200311-Sheet_n.png"
-dest_files=[ "res://.import/bulbi_idlewalkpush03_20200311-Sheet_n.png-93843a8bb6f80a017629f1a1fe987258.stex" ]
+source_file="res://Imports/recharge_light.png"
+dest_files=[ "res://.import/recharge_light.png-ddd549cf933399e2cb89699a752d538c.stex" ]
 
 [params]
 

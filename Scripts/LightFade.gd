@@ -30,11 +30,11 @@ func _ready():
 	_rechargeTimer.one_shot = false
 	_rechargeTimer.connect("timeout", self, "_recharge_timer_timeot")
 	
-	get_node("/root/World/RechargePoint").connect("body_entered", self, "on_recharge")
+	get_node("/root/Level1/RechargePoint").connect("body_entered", self, "on_recharge")
 	
 func _on_timer_timeout():
 	if !isRecharging:
-		self.texture_scale = max(0, self.texture_scale - fadeAmount)
+		self.texture_scale = max(-.001, self.texture_scale - fadeAmount)
 	
 func _recharge_timer_timeot():
 	canRecharge = !canRecharge
