@@ -30,7 +30,10 @@ func _ready():
 	_rechargeTimer.one_shot = false
 	_rechargeTimer.connect("timeout", self, "_recharge_timer_timeot")
 	
-	get_node("/root/Level1/RechargePoint").connect("body_entered", self, "on_recharge")
+	var recharge_point = get_node("/root/Level1/RecdhargePoint")
+	
+	if recharge_point:
+		recharge_point.connect("body_entered", self, "on_recharge")
 	
 func _on_timer_timeout():
 	if !isRecharging:

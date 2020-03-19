@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Imports/itemsfornormals001_20200319_n.png" type="Texture" id=1]
+[ext_resource path="res://Imports/Circle.png" type="Texture" id=2]
+[ext_resource path="res://Imports/items001_20200319.png" type="Texture" id=3]
+
+[node name="Lamp" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+normal_map = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 493, 46, 103, 190 )
+
+[node name="Light2D" type="Light2D" parent="."]
+visible = false
+position = Vector2( -142.889, -114.015 )
+scale = Vector2( 1, 0.5 )
+texture = ExtResource( 2 )
+texture_scale = 20.0
+color = Color( 0.988235, 0.921569, 0.670588, 1 )
+energy = 2.0
+range_layer_min = -1
+shadow_enabled = true
+shadow_color = Color( 0.0196078, 0.0196078, 0.0196078, 1 )
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
