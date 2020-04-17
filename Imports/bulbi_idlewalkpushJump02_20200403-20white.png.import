@@ -2,19 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bulbiwalk02_64x64_20200225-Sheet.png-d9eafc89446402027e7535c5dfc542d3.stex"
+path="res://.import/bulbi_idlewalkpushJump02_20200403-20white.png-9a85702577890c777305578088895b38.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imports/bulbiwalk02_64x64_20200225-Sheet.png"
-dest_files=[ "res://.import/bulbiwalk02_64x64_20200225-Sheet.png-d9eafc89446402027e7535c5dfc542d3.stex" ]
+source_file="res://Imports/bulbi_idlewalkpushJump02_20200403-20white.png"
+dest_files=[ "res://.import/bulbi_idlewalkpushJump02_20200403-20white.png-9a85702577890c777305578088895b38.stex" ]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

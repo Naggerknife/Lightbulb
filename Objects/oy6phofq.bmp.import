@@ -2,25 +2,25 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bulbi_idlewalkpush02_20200302-Sheet.png-14b08c9ab97faf4401564235901af2ae.stex"
+path="res://.import/oy6phofq.bmp-3a1c591a1c6e2ca0c798c90848ea1718.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Imports/bulbi_idlewalkpush02_20200302-Sheet.png"
-dest_files=[ "res://.import/bulbi_idlewalkpush02_20200302-Sheet.png-14b08c9ab97faf4401564235901af2ae.stex" ]
+source_file="res://Objects/oy6phofq.bmp"
+dest_files=[ "res://.import/oy6phofq.bmp-3a1c591a1c6e2ca0c798c90848ea1718.stex" ]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=false
+flags/filter=true
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2

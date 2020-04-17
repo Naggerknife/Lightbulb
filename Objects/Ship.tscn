@@ -1,14 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/Ship.gd" type="Script" id=1]
 [ext_resource path="res://Objects/Pushable.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Imports/items001_20200319.png" type="Texture" id=3]
-[ext_resource path="res://Imports/itemsfornormals001_20200319_n.png" type="Texture" id=4]
 
 [node name="Ship" instance=ExtResource( 2 )]
 script = ExtResource( 1 )
 
 [node name="Sprite" parent="." index="0"]
-texture = ExtResource( 3 )
-normal_map = ExtResource( 4 )
 region_rect = Rect2( 269, 176, 91, 60 )

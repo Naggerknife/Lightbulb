@@ -12,9 +12,12 @@ var currentScale
 var isRecharging = false
 var canRecharge = false
 
+# warning-ignore:unused_argument
 func _process(delta):
-	if isRecharging && canRecharge:
-		RechargeLight(fadeAmount)
+	if isRecharging && _rechargeTimer.is_stopped():
+		_rechargeTimer.start()
+	elif !isRecharging:
+		_rechargeTimer.stop()
 
 func _ready():
 	#Fade Timer
@@ -28,31 +31,15 @@ func _ready():
 	
 	_rechargeTimer.wait_time = 1
 	_rechargeTimer.one_shot = false
-	_rechargeTimer.connect("timeout", self, "_recharge_timer_timeot")
-	
-	var recharge_point = get_node("/root/Level1/RecdhargePoint")
-	
-	if recharge_point:
-		recharge_point.connect("body_entered", self, "on_recharge")
+	_rechargeTimer.connect("timeout", self, "_recharge_timer_timeout")
 	
 func _on_timer_timeout():
 	if !isRecharging:
 		self.texture_scale = max(-.001, self.texture_scale - fadeAmount)
 	
-func _recharge_timer_timeot():
-	canRecharge = !canRecharge
+func _recharge_timer_timeout():
+	RechargeLight(fadeAmount)
 	
 func RechargeLight(amount):
 	self.texture_scale = min(self.texture_scale + (amount * 2), currentScale)
-	canRecharge = false
-	
-func on_recharge(input):
-	if input == "entered":
-		isRecharging = true
-		_rechargeTimer.start()
-		print('recharging')
-	if input == "exited":
-		isRecharging = false
-		_rechargeTimer.stop()
-		print('not recharging')
 	
