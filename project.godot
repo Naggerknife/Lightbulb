@@ -23,6 +23,10 @@ _global_script_class_icons={
 config/name="LightBulb"
 run/main_scene="res://MainMenu.tscn"
 
+[audio]
+
+default_bus_layout=""
+
 [autoload]
 
 Transition="*res://Objects/Transition.tscn"
