@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Bottle Jump.wav-4d137bb1162d996fb5bdbd2e39235f66.sample"
+
+[deps]
+
+source_file="res://Audio/Sound Effects/Walking/Glass Bottle Jump/Bottle Jump.wav"
+dest_files=[ "res://.import/Bottle Jump.wav-4d137bb1162d996fb5bdbd2e39235f66.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Death Sound (LightBulb).ogg-142de50b76810031b9a5f878d414c49b.oggstr"
+
+[deps]
+
+source_file="res://Audio/Sound Effects/Death Sound/Death Sound (LightBulb).ogg"
+dest_files=[ "res://.import/Death Sound (LightBulb).ogg-142de50b76810031b9a5f878d414c49b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

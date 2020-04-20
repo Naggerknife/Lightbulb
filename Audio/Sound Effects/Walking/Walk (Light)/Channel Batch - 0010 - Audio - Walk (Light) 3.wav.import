@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Channel Batch - 0010 - Audio - Walk (Light) 3.wav-18c4e6cbfa07312c174510816cc630ab.sample"
+
+[deps]
+
+source_file="res://Audio/Sound Effects/Walking/Walk (Light)/Channel Batch - 0010 - Audio - Walk (Light) 3.wav"
+dest_files=[ "res://.import/Channel Batch - 0010 - Audio - Walk (Light) 3.wav-18c4e6cbfa07312c174510816cc630ab.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

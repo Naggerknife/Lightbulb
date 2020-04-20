@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Button Click 2 (LightBulb).wav-e98fded4e26a5f1a58c2ebcf90e1645a.sample"
+
+[deps]
+
+source_file="res://Audio/Sound Effects/Button Clicks/Button Click 2 (LightBulb).wav"
+dest_files=[ "res://.import/Button Click 2 (LightBulb).wav-e98fded4e26a5f1a58c2ebcf90e1645a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

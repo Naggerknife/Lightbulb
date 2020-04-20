@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Channel Batch - 0006 - Audio - Glass Bottle Walk 4.wav-2711f78ea150706dd3cf2a3e06073fa0.sample"
+
+[deps]
+
+source_file="res://Audio/Sound Effects/Walking/Glass Bottle Walk/Channel Batch - 0006 - Audio - Glass Bottle Walk 4.wav"
+dest_files=[ "res://.import/Channel Batch - 0006 - Audio - Glass Bottle Walk 4.wav-2711f78ea150706dd3cf2a3e06073fa0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

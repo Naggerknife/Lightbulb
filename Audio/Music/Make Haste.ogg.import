@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Make Haste.ogg-5e25b49c9fca594992764c32107db729.oggstr"
+
+[deps]
+
+source_file="res://Audio/Music/Make Haste.ogg"
+dest_files=[ "res://.import/Make Haste.ogg-5e25b49c9fca594992764c32107db729.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

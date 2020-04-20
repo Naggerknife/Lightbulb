@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Channel Batch - 0025 - Audio - Book Walk 3.wav-bd43de254bc488811ceb01354432931d.sample"
+
+[deps]
+
+source_file="res://Audio/Sound Effects/Walking/Book Walk/Channel Batch - 0025 - Audio - Book Walk 3.wav"
+dest_files=[ "res://.import/Channel Batch - 0025 - Audio - Book Walk 3.wav-bd43de254bc488811ceb01354432931d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
