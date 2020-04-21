@@ -67,9 +67,6 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource( 5 )
 centered = false
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CanvasModulate" type="CanvasModulate" parent="ParallaxBackground/ParallaxLayer/Sprite"]
 color = Color( 0, 0, 0, 1 )
@@ -102,10 +99,6 @@ roundTimer = 20
 [node name="Ship" parent="." instance=ExtResource( 3 )]
 position = Vector2( 1224, 960 )
 
-[node name="EndPoint" parent="." instance=ExtResource( 8 )]
-position = Vector2( 3016.88, 881.238 )
-world_Scene = "res://Level2.tscn"
-
 [node name="Lamp" parent="." instance=ExtResource( 1 )]
 position = Vector2( 1560, 783.594 )
 z_index = -1
@@ -118,6 +111,10 @@ position = Vector2( 1840, 912 )
 
 [node name="LevelEnd" parent="." instance=ExtResource( 11 )]
 position = Vector2( 2072, 1096 )
+
+[node name="EndPoint" parent="." instance=ExtResource( 8 )]
+position = Vector2( 3016.88, 881.238 )
+world_Scene = "res://Level2.tscn"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
