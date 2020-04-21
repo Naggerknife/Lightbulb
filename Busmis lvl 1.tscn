@@ -67,11 +67,9 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 texture = ExtResource( 1 )
 centered = false
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CanvasModulate" type="CanvasModulate" parent="ParallaxBackground/ParallaxLayer/Sprite"]
+z_index = 1
 color = Color( 0, 0, 0, 1 )
 
 [node name="Tilemaps" type="Node2D" parent="."]
@@ -89,27 +87,19 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 9 )]
-position = Vector2( 1128.97, 953.56 )
-collision_mask = 524291
-
-[node name="Light2D" parent="Player" index="1"]
-position = Vector2( 0.730957, 2.30267 )
-texture_scale = 7.0
-roundTimer = 20
+position = Vector2( 1093.8, 960.238 )
 
 [node name="Ship" parent="." instance=ExtResource( 11 )]
-position = Vector2( 863.5, 866.678 )
-
-[node name="LevelEnd" parent="." instance=ExtResource( 12 )]
-position = Vector2( 2040.94, 1248 )
+position = Vector2( 868.669, 835.662 )
 
 [node name="Lamp" parent="." instance=ExtResource( 10 )]
-position = Vector2( 535.278, 967.175 )
+position = Vector2( 535.278, 969.76 )
 
-[node name="EndPoint" parent="." instance=ExtResource( 13 )]
-position = Vector2( 1498.58, 954.289 )
+[node name="Book1" parent="." instance=ExtResource( 14 )]
+position = Vector2( 787.865, 928.883 )
+rotation = 1.80003
 
-[node name="Book 1" parent="." instance=ExtResource( 15 )]
+[node name="Book2" parent="." instance=ExtResource( 15 )]
 position = Vector2( 716.922, 1079.66 )
 rotation = 0.74611
 
@@ -117,12 +107,14 @@ rotation = 0.74611
 position = Vector2( 641.479, 1049.34 )
 rotation = 0.0448885
 
+[node name="LevelEnd" parent="." instance=ExtResource( 12 )]
+position = Vector2( 2040.94, 1248 )
+
+[node name="EndPoint" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1498.58, 954.289 )
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 2 )
 autoplay = true
-
-[node name="Book1" parent="." instance=ExtResource( 14 )]
-position = Vector2( 787.865, 928.883 )
-rotation = 1.80003
 
 [editable path="Player"]
