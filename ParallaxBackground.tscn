@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Imports/wallpaper_torn_20200310.png" type="Texture" id=1]
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+layer = -1
+follow_viewport_enable = true
+follow_viewport_scale = 0.75
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+z_index = -1
+motion_scale = Vector2( 0.01, 0.01 )
+motion_mirroring = Vector2( 1920, 1080 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="ParallaxLayer"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="ParallaxLayer/Sprite"]
+color = Color( 0, 0, 0, 1 )
